@@ -7,6 +7,8 @@ fs.createReadStream('JavaProject.csv')
   .pipe(csv({}))
   .on('data', (data) => results.push(data))
   .on('end', () => {
+    // console.log(results);
+
     for (let i = 0; i < results.length; i++) {
       let obj = {};
       obj.STATUS = results[i].STATUS;
