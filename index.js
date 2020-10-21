@@ -16,9 +16,14 @@ fs.createReadStream('JavaProject.csv')
       obj.DEADLINE = results[i].DEADLINE;
       obj['FIXED COST'] = results[i]['FIXED COST'];
       obj['ACTUAL HRS'] = results[i]['ACTUAL HRS'];
+      // obj.TOTAL =
+      //   parseInt(results[i]['FIXED COST'].slice(1).replace(",", "")) +
+      //   parseInt(results[i]['ACTUAL HRS']);
+
       obj.TOTAL =
-        parseInt(results[i]['FIXED COST'].slice(1).replace(",", "")) +
-        parseInt(results[i]['ACTUAL HRS']);
+      parseInt(results[i]['FIXED COST'].replace("$", "").replace(",", "")) +
+      parseInt(results[i]['ACTUAL HRS']);
+
 
       result.push(obj);
     }
